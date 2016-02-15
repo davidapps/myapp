@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Popos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @popos.each do |popo| %>
+      <tr>
+        <td><%= popo.title %></td>
+        <td><%= link_to 'Show', popo %></td>
+        <td><%= link_to 'Edit', edit_popo_path(popo) %></td>
+        <td><%= link_to 'Destroy', popo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Popo', new_popo_path %>
